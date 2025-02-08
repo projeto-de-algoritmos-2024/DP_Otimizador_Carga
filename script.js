@@ -191,8 +191,39 @@ function optimizeLoad() {
   totalWeightElement.textContent = `${totalWeight.toFixed(1)} kg`;
 }
 
+// Função para gerar um número aleatório entre min e max
+function getRandomNumber(min, max) {
+  return Math.random() * (max - min) + min;
+}
+// Função para gerar itens aleatórios
+async function generateRandomItems() {
+  try {
+    const itemNames = itemsData.items;
+    // Limpar lista atual
+    items = [];
+    // Gerar 5 itens aleatórios
+    for (let i = 0; i < 5; i++) {
+      const randomName =
+        itemNames[Math.floor(Math.random() * itemNames.length)];
+      const randomWeight = parseFloat(getRandomNumber(50, 200).toFixed(1)); // Peso entre 50 e 200 kg
+      const randomValue = parseFloat(getRandomNumber(50, 1000).toFixed(2)); // Valor entre 50 e 1000 reais
+      items.push({
+        name: randomName,
+        weight: randomWeight,
+        value: randomValue,
+      });
+    }
+    // Atualizar a interface
+    updateItemsList();
+  } catch (error) {
+    console.error("Erro ao carregar ou gerar itens:", error);
+    alert("Erro ao gerar itens aleatórios. Por favor, tente novamente.");
+  }
+}
+
 // Event Listeners
 addItemButton.addEventListener("click", addItem);
+generateItemsButton.addEventListener("click", generateRandomItems);
 optimizeButton.addEventListener("click", optimizeLoad);
 
 // Permitir adicionar item com Enter

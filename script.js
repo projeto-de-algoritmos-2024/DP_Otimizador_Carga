@@ -26,6 +26,19 @@ const itemsData = {
 // Estado global da aplicação
 let items = [];
 
+// Elementos do DOM
+const maxWeightInput = document.getElementById("maxWeight");
+const itemNameInput = document.getElementById("itemName");
+const itemWeightInput = document.getElementById("itemWeight");
+const itemValueInput = document.getElementById("itemValue");
+const addItemButton = document.getElementById("addItem");
+const generateItemsButton = document.getElementById("generateItems");
+const optimizeButton = document.getElementById("optimize");
+const itemsListElement = document.getElementById("itemsList");
+const totalValueElement = document.getElementById("totalValue");
+const totalWeightElement = document.getElementById("totalWeight");
+const selectedItemsElement = document.getElementById("selectedItems");
+
 // Implementação do algoritmo Knapsack com Programação Dinâmica
 function knapsackDP(capacity, weights, values, n) {
   // Criação da matriz de programação dinâmica
@@ -79,19 +92,6 @@ function knapsackDP(capacity, weights, values, n) {
     selectedItems: selectedItems,
   };
 }
-
-// Elementos do DOM
-const maxWeightInput = document.getElementById("maxWeight");
-const itemNameInput = document.getElementById("itemName");
-const itemWeightInput = document.getElementById("itemWeight");
-const itemValueInput = document.getElementById("itemValue");
-const addItemButton = document.getElementById("addItem");
-const generateItemsButton = document.getElementById("generateItems");
-const optimizeButton = document.getElementById("optimize");
-const itemsListElement = document.getElementById("itemsList");
-const totalValueElement = document.getElementById("totalValue");
-const totalWeightElement = document.getElementById("totalWeight");
-const selectedItemsElement = document.getElementById("selectedItems");
 
 // Funções de manipulação da interface
 function addItem() {
@@ -195,24 +195,29 @@ function optimizeLoad() {
 function getRandomNumber(min, max) {
   return Math.random() * (max - min) + min;
 }
+
 // Função para gerar itens aleatórios
 async function generateRandomItems() {
   try {
     const itemNames = itemsData.items;
+
     // Limpar lista atual
     items = [];
+
     // Gerar 5 itens aleatórios
     for (let i = 0; i < 5; i++) {
       const randomName =
         itemNames[Math.floor(Math.random() * itemNames.length)];
       const randomWeight = parseFloat(getRandomNumber(50, 200).toFixed(1)); // Peso entre 50 e 200 kg
       const randomValue = parseFloat(getRandomNumber(50, 1000).toFixed(2)); // Valor entre 50 e 1000 reais
+
       items.push({
         name: randomName,
         weight: randomWeight,
         value: randomValue,
       });
     }
+
     // Atualizar a interface
     updateItemsList();
   } catch (error) {

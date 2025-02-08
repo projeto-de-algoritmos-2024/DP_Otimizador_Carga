@@ -169,3 +169,12 @@ function optimizeLoad() {
 // Event Listeners
 addItemButton.addEventListener("click", addItem);
 optimizeButton.addEventListener("click", optimizeLoad);
+
+// Permitir adicionar item com Enter
+[itemNameInput, itemWeightInput, itemValueInput].forEach((input) => {
+  input.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+      addItem();
+    }
+  });
+});

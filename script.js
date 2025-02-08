@@ -1,3 +1,28 @@
+const itemsData = {
+  items: [
+    "Caixa de Eletrônicos",
+    "Móveis de Escritório",
+    "Material de Construção",
+    "Alimentos não perecíveis",
+    "Equipamentos de Ginástica",
+    "Livros",
+    "Roupas",
+    "Brinquedos",
+    "Ferramentas",
+    "Produtos de Limpeza",
+    "Equipamentos de Informática",
+    "Material Escolar",
+    "Utensílios Domésticos",
+    "Produtos de Jardinagem",
+    "Equipamentos Esportivos",
+    "Instrumentos Musicais",
+    "Peças Automotivas",
+    "Artigos de Decoração",
+    "Material de Pintura",
+    "Equipamentos de Camping",
+  ],
+};
+
 // Estado global da aplicação
 let items = [];
 

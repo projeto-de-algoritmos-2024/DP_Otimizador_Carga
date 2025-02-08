@@ -7,6 +7,32 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div id="background-animation">
+      <!-- Chão -->
+      <div class="road"></div>
+
+      <!-- Carreta (caminhão com cabine e trailer) -->
+      <div
+        class="truck"
+        style="bottom: 100px; animation-delay: 0s; animation-duration: 13s"
+      >
+        <div class="truck-body">
+          <!-- Cabine -->
+          <div class="cab">
+            <div class="window"></div>
+          </div>
+          <!-- Trailer com o texto "Sedex" -->
+          <div class="trailer">
+            <span class="truck-text">Sedex</span>
+          </div>
+        </div>
+        <!-- Rodas da cabine e do trailer -->
+        <div class="wheel wheel1"></div>
+        <div class="wheel wheel2"></div>
+        <div class="wheel wheel3"></div>
+        <div class="wheel wheel4"></div>
+      </div>
+    </div>
     <div class="container">
       <header>
         <h1>Otimizador de Carga para Caminhões</h1>

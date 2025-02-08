@@ -10,3 +10,7 @@ const itemsListElement = document.getElementById("itemsList");
 const totalValueElement = document.getElementById("totalValue");
 const totalWeightElement = document.getElementById("totalWeight");
 const selectedItemsElement = document.getElementById("selectedItems");
+
+// Event Listeners
+addItemButton.addEventListener("click", addItem);
+optimizeButton.addEventListener("click", optimizeLoad);

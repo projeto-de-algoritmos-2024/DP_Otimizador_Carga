@@ -34,13 +34,13 @@ O objetivo do nosso projeto foi implementar o algoritmo KnapSack DP. Através de
 
 Não há a necessidade instalar, pois o projeto está rodando no deploy do próprio github, no link abaixo:
 
-[Acesse o deploy]()
+[Acesse o deploy](https://projeto-de-algoritmos-2024.github.io/PD_Otimizador_Carga/)
 
 Porém, caso queira rodar o projeto localmente, segue os passos abaixo:
 
 1. Clone o repositório
 `
-git clone https://github.com/lucasfrazao/PA_5.git
+git clone https://github.com/projeto-de-algoritmos-2024/PD_Otimizador_Carga.git
 `
 
 2. Abra o index.html em qualquer navegador (é importante que o html, css e js estejam na mesma pasta)
